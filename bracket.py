@@ -33,11 +33,11 @@ teams_2026 = {
 def simulate_game(t1, t2):
     s1, s2 = teams_2026[t1], teams_2026[t2]
     
-    # 1. Apply your custom Momentum Logic
+    # 1. Applying custom Momentum Logic
     m1 = get_momentum_boost(s1['seed'], s1['last_margin'])
     m2 = get_momentum_boost(s2['seed'], s2['last_margin'])
     
-    # 2. Calculate "Power Rating" (70% KenPom Efficiency, 30% Vegas Title Odds)
+    # 2.  "Power Rating" (70% KenPom Efficiency, 30% Vegas Title Odds)
     # We multiply Vegas by 100 to put it on a similar scale to AdjEM
     p1 = ((s1['adjem'] * 0.7) + (s1['vegas'] * 100 * 0.3)) * m1
     p2 = ((s2['adjem'] * 0.7) + (s2['vegas'] * 100 * 0.3)) * m2
